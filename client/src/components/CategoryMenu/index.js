@@ -15,15 +15,24 @@ import { QUERY_CATEGORIES } from "../../utils/queries";
 import { idbPromise } from "../../utils/helpers";
 
 function CategoryMenu() {
-  // TODO: remove the line below. We will use useDispatch and useSelector to generate state and dispatch
+  // Assignment: remove the line below. We will use useDispatch and useSelector to generate state and dispatch
   // const [state, dispatch] = useStoreContext();
-  // TODO: Create a const variable 'dispatch' and assign the returned value from useDispatch()
-  const dispatch = useDispatch();
-  // TODO: create a const varailbe 'state' and assign the returned value from useSelector(...)
-  const state = useSelector((state) => state);// Hint: search 28-Stu_Mini-Project for how to create the two variables, dispatch and state
+  // Assignment: Create a const variable 'dispatch' and assign the returned value from useDispatch()
+  //TODO find out if useDispatch should be followed by () or not:  example26 Main/solved has useDispatch with no () following, 
+  const dispatch = useDispatch;
+  // assignment: create a const varailbe 'state' and assign the returned value from useSelector(...)
+  // Hint: search 28-Stu_Mini-Project for how to create the two variables, dispatch and state}
+  const state = useSelector(state => state);
+  {/* TODO:
+    figure out why this did not work
+    const categories = useSelector((state) => state.categories);// Hint: search 28-Stu_Mini-Project for how to create the two variables, dispatch and state}
+  const [categories, item ] = useState;
+  console.log("Catagories:","\n",categories);
+  console.log("State:","\n",state);
 
-  const { categories } = state;
 
+  
+*/}
   const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
 
   useEffect(() => {
@@ -51,7 +60,7 @@ function CategoryMenu() {
       currentCategory: id,
     });
   };
-
+  //Alert does not like item
   return (
     <div>
       <h2>Choose a Category:</h2>
