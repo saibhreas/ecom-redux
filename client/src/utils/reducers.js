@@ -16,14 +16,23 @@ import {
 
 //TODO: create initialState for the defaults for your app by locating the default values used in this app in the other file and moving it here.
 const initialState = {
-  //TODO: fill in the default values here
   products: [],
-  cart: [],
-  catagories: [],
-  currentCategory: '',
-  cartOpen: false
-}
-
+  cart: [
+    {
+      _id: '1',
+      name: 'Soup',
+      purchaseQuantity: 1
+    },
+    {
+      _id: '2',
+      name: 'Bread',
+      purchaseQuantity: 2
+    }
+  ],
+  cartOpen: false,
+  categories: [{ name: 'Food' }],
+  currentCategory: '1',
+};
 // The reducer is a function that accepts the current state and an action. It returns a new state based on that action.
 export const reducers = (state = initialState, action) => {
   switch (action.type) {
@@ -91,6 +100,7 @@ export const reducers = (state = initialState, action) => {
       return {
         ...state,
         categories: [...action.categories],
+        
       };
 
     case UPDATE_CURRENT_CATEGORY:
