@@ -1,5 +1,16 @@
 # ecom-redux
+
+### gihub deployment: https://saibhreas.github.io/ecom-redux/ 
+### youtube https://youtu.be/dCIK_5C_3Zk
+
+
 refactoring of react site to redux
+
+
+
+
+
+
 
 First run failed.
 
